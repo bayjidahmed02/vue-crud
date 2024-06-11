@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Vus Js</title>
+        <link
+            rel="shortcut icon"
+            href="./img/preview.jpg"
+            type="image/x-icon"
+        />
+        <script src="https://unpkg.com/vue@3"></script>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        />
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <div id="app">
+            <card-component
+                title="Card title goes here"
+                description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae error recusandae sapiente at. Qui veritatis quia hic dolor facilis! Illum?"
+                url="https://www.google.com"
+                btn="Google"
+            >
+            </card-component>
+            <card-component
+                title="Second title goes here"
+                description="Molestiae error recusandae sapiente at. Qui veritatis quia hic dolor facilis! Illum?"
+                btn="Youtube"
+                url="https://www.youtube.com"
+            ></card-component>
+        </div>
+        <script src="./main.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+</html>
