@@ -31,12 +31,18 @@ const app = Vue.createApp({
         .post("http://localhost/vue/api.php?action=create", formData)
         .then((res) => {
           // this.users = res.data.users;
-          console.log(res.data);
           this.getData();
           this.hideModal();
           this.form.name = "";
           this.form.email = "";
           this.form.phone = "";
+        });
+    },
+    deleteData(id) {
+      axios
+        .get(`http://localhost/vue/api.php?action=delete&id=${id}`)
+        .then((res) => {
+          this.getData();
         });
     },
   },

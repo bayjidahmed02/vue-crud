@@ -43,9 +43,12 @@
             <td>{{ user.phone }}</td>
             <td class="d-flex gap-2 justify-content-center">
               <a href="#" class="btn btn-outline-dark rounded-1 py-1">Edit</a>
-              <a href="#" class="btn btn-outline-danger rounded-1 py-1"
-                >Delete</a
+              <button
+                class="btn btn-outline-danger rounded-1 py-1"
+                @click="deleteData(user.id)"
               >
+                Delete
+              </button>
             </td>
           </tr>
         </tbody>
