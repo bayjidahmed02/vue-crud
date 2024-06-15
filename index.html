@@ -42,7 +42,12 @@
             <td>{{ user.email }}</td>
             <td>{{ user.phone }}</td>
             <td class="d-flex gap-2 justify-content-center">
-              <a href="#" class="btn btn-outline-dark rounded-1 py-1">Edit</a>
+              <button
+                class="btn btn-outline-dark rounded-1 py-1"
+                @click="showUpdateModal(user)"
+              >
+                Edit
+              </button>
               <button
                 class="btn btn-outline-danger rounded-1 py-1"
                 @click="deleteData(user.id)"
@@ -54,7 +59,6 @@
         </tbody>
       </table>
 
-      <!-- <div class="usermodal mx-auto w-25 mt-5 mb-2 shadow-sm p-3 rounded"> -->
       <div class="usermodal" v-if="addModal">
         <div class="modal-contents">
           <div class="modal-headers">
@@ -95,6 +99,55 @@
                 <button
                   class="btn btn-outline-danger px-4 rounded-1"
                   @click="hideModal"
+                >
+                  Close
+                </button>
+                <button class="btn btn-success px-4 rounded-1">Submit</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="usermodal" v-if="editModal">
+        <div class="modal-contents">
+          <div class="modal-headers">
+            <h5 class="mb-0 align-self-center">Update user info</h5>
+            <hr />
+          </div>
+          <div class="modal-bodies">
+            <form @submit.prevent="updateData">
+              <div class="mb-3">
+                <label for="">Name</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  v-model="form.name"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="">Email</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  v-model="form.email"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="">Phone</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  v-model="form.phone"
+                  required
+                />
+              </div>
+              <hr />
+              <div class="modal-footers d-flex gap-2 justify-content-end">
+                <button
+                  class="btn btn-outline-danger px-4 rounded-1"
+                  @click="hideUpdateModal"
                 >
                   Close
                 </button>
